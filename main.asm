@@ -7,6 +7,7 @@ include Irvine32.inc
     msg3 db "PESEL musi skladac sie z samych cyfr",0
     msg4 db "Suma kontrolna PESEL'u jest nieprawidlowa",0
     msg5 db "PESEL jest prawidlowy",0
+    msg6 db "Kliknij enter aby zakonczyc program ",0
 
     pesel byte 13 dup (0) ; ustawione na 13 aby pesel MÓGŁ być za długi i wyskoczył błąd (normalnie długość powinna wynosić 12, 11 + 0)
     pesel_instruction_weight byte 1, 3, 7, 9, 1, 3, 7, 9, 1, 3
@@ -78,24 +79,24 @@ include Irvine32.inc
         je validate_10
         jne validate
 
-        exit
+        jmp end_message
 
         bad_pesel_lenght:
             mov edx, offset msg2
             call WriteString
-            exit
+            jmp end_message
 
         number_check:
             cmp al, 57
             jle number_check_back
             mov edx, offset msg3
             call WriteString
-            exit
+            jmp end_message
 
         number_check_2:
             mov edx, offset msg3
             call WriteString
-            exit
+            jmp end_message
 
         nr_10:
             movzx eax, al
@@ -115,13 +116,21 @@ include Irvine32.inc
         success_message:
             mov edx, offset msg5
             call WriteString
-            exit
+            jmp end_message
 
         error_message:
             mov edx, offset msg4
             call WriteString
-            exit
+            jmp end_message
 
+        end_message:
+            mov eax, 10
+            call WriteChar
+            mov edx, offset msg6
+            mov ecx, 1
+            call WriteString
+            call ReadString
+            exit
     main endp
     end main
 
