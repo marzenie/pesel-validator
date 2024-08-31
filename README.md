@@ -9,5 +9,5 @@ sprawdza:
   * Czy zawiera tylko cyfry
   * Sume kontrolną
 
-    
-![image](https://github.com/user-attachments/assets/ce98f2f1-0421-4355-8057-9f68901efd1c)
+![image](https://github.com/user-attachments/assets/6c956f17-5258-4020-8c2a-b6d7bf5a2bba)
+
