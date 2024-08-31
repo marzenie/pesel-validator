@@ -4,7 +4,7 @@ Assembly pesel validator
 Napisany przy użyciu biblioteki: [Irvine](https://github.com/surferkip/asmbook)
 
 jest to program consolowy i 
-Sprawdza:
+sprawdza:
   * Długość peselu
   * Czy zawiera tylko cyfry
   * Sume kontrolną
