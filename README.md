@@ -13,5 +13,7 @@ sprawdza:
 wyświetla:
  * date urodzenia
  * płeć
+
+
 ![image](https://github.com/user-attachments/assets/6c956f17-5258-4020-8c2a-b6d7bf5a2bba)
 
