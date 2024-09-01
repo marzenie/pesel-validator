@@ -15,5 +15,6 @@ wyświetla:
  * płeć
 
 
-![image](https://github.com/user-attachments/assets/6c956f17-5258-4020-8c2a-b6d7bf5a2bba)
+![image](https://github.com/user-attachments/assets/d1c2fa8a-8dc8-48bd-b502-75f889e21ff1)
+
 
