@@ -277,8 +277,11 @@ include Irvine32.inc
             mov  al,'-'
             call WriteChar
 
+            cmp br_month_type, 0
+            jne skip_adding_0
             mov  al,'0'
             call WriteChar
+            skip_adding_0:
 
             mov  al, br_month
             call WriteDec
@@ -305,8 +308,10 @@ include Irvine32.inc
             call WriteString
             jmp sex_back
         calculate_month:
-            cmp br_month_type, 0
+            cmp br_month_type, 1
             je calculate_month_type_2
+
+
             jmp calculate_month_back
 
             calculate_month_type_2:
@@ -328,7 +333,7 @@ include Irvine32.inc
                     mov br_month, 11
                     jmp calculate_month_back
                 december:
-                    mov br_month, 11
+                    mov br_month, 12
                     jmp calculate_month_back
 
         error_message:
